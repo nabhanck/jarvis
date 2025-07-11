@@ -1,0 +1,40 @@
+# ── Python virtual‑envs ───────────────────────────────
+jarvis/            # ← your venv; rename here if different
+venv/
+.env/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Editor / OS odds and ends
+.DS_Store
+*.swp
+
+
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
