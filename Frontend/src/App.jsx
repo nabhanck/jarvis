@@ -19,9 +19,10 @@ function App() {
   }, [messages]);
 
   const getGreeting = async () => {
-    const res = await fetch("http://localhost:5000/api/start", {
+    const res = await fetch("https://jarvis-0n4q.onrender.com/api/start", {
       method: "GET",
       headers: { "Content-Type": "application/json" },
+      credentials: "include",
     });
     const data = await res.json();
     setMessages([...messages, { user: null, bot: data.response }]);
@@ -31,7 +32,7 @@ function App() {
   };
 
   const sendMessage = async () => {
-    const res = await fetch("http://localhost:5000/api/chat", {
+    const res = await fetch("https://jarvis-0n4q.onrender.com/api/chat", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message: input }),
