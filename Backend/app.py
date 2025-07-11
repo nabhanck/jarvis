@@ -2,13 +2,21 @@ from flask import Flask, request, jsonify, session
 from flask_cors import CORS
 from jarvis import process_input, greetings, languages, category, movie_recommendation, tell_weather
 import random
+from flask_session import Session
 
 
 app = Flask(__name__)
 app.secret_key = "a_super_secret_key_12345"
+
+app.config["SESSION_TYPE"] = "filesystem"
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_USE_SIGNER"] = True
 app.config["SESSION_COOKIE_SAMESITE"] = "None"
 app.config["SESSION_COOKIE_SECURE"] = True
-CORS(app, supports_credentials=True, origins=["https://jarviscs50.netlify.app/"])
+
+Session(app)
+
+CORS(app, supports_credentials=True, origins=["https://jarviscs50.netlify.app"])
 
 weather_prompts = [
         "Sorry, I dont have permission to your location. Where do you live ?\n",
