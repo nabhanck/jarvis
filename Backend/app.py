@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = "a_super_secret_key_12345"
 app.config["SESSION_COOKIE_SAMESITE"] = "None"
 app.config["SESSION_COOKIE_SECURE"] = True
-CORS(app, supports_credentials=True, origins=["http://localhost:5173"])
+CORS(app, supports_credentials=True, origins=["https://jarviscs50.netlify.app/"])
 
 weather_prompts = [
         "Sorry, I dont have permission to your location. Where do you live ?\n",
