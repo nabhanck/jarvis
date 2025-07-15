@@ -16,7 +16,13 @@ app.config["SESSION_COOKIE_SECURE"] = True
 
 Session(app)
 
-CORS(app, supports_credentials=True, origins=["https://jarviscs50.netlify.app"])
+CORS(
+    app,
+    origins=["https://jarviscs50.netlify.app"],   # exact Netlify origin
+    supports_credentials=True,                    # because fetch(..., credentials="include")
+    methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type", "Authorization"],
+)
 
 weather_prompts = [
         "Sorry, I dont have permission to your location. Where do you live ?\n",

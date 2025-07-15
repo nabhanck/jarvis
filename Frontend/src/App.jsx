@@ -112,7 +112,7 @@ function App() {
         className="w-full h-full object-cover"
       />
       <div className="absolute inset-0 bg-black/40 backdrop-blur-sm" />
-      <div className="absolute top-1/12 left-1/4 w-1/2 h-3/4">
+      <div className="absolute top-1/12 sm:left-1/4 w-full sm:w-1/2 h-3/4">
         {!hasStarted ? (
           <div className="flex justify-center items-center h-full">
             <button
@@ -123,7 +123,7 @@ function App() {
             </button>
           </div>
         ) : (
-          <div className="flex flex-col gap-10 justify-between p-10 w-full h-full">
+          <div className="flex flex-col gap-10 justify-between p-5 sm:p-10 w-full h-full">
             <div
               style={{ whiteSpace: "pre-wrap", fontFamily: "monospace" }}
               className="bg-black/10 backdrop-blur-md rounded-lg border border-white/20 h-3/2 py-5 pl-5 overflow-y-scroll customScroll"
@@ -155,12 +155,12 @@ function App() {
                     sendMessage();
                   }
                 }}
-                className="bg-black text-green-600 w-[85%] focus:outline-none py-1 px-5 rounded-2xl font-mono"
+                className="bg-black text-green-600 w-[75%] sm:w-[85%] focus:outline-none py-1 px-5 rounded-2xl font-mono"
               />
               <button
                 disabled={isSpeaking}
                 onClick={sendMessage}
-                className={`bg-black w-[10%] text-green-600 font-mono rounded-2xl transition-opacity duration-200 ${
+                className={`bg-black w-[20%] sm:w-[10%] text-green-600 font-mono rounded-2xl transition-opacity duration-200 ${
                   isSpeaking
                     ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-gray-900 cursor-pointer"

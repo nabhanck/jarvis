@@ -69,6 +69,20 @@ def process_input(user_input):
         expression = match.group().strip()
         return do_math(expression)
 
+    elif any(word.lower() in user_input for word in ["hi", "hello", "who", "jarvis"]):
+        prompts = [
+            "Hi there! How can I help you today?\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            "Hello! What’s on your mind?\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            "Hey! I’m Jarvis—need a hand with something?\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            "Greetings! How may I assist you?\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            "Hello! Feel free to ask me anything.\n 💡 Tip: Press 'h' to see what I can do!",
+            "Hi! Is there something I can do for you?\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            "Hey there! Ready when you are.\n 💡 Tip: Enter 'h' or 'help' to see what I can do!",
+            # "💡 Tip: Press 'h' to see what I can do!"
+        ]
+        prompt = random.choice(prompts)
+        return prompt
+        
     elif "movie" in user_input:
         return movie_recommendation()
     elif "book" in user_input:
